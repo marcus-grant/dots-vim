@@ -34,7 +34,8 @@ call plug#end()
 " We set it explicitely to make our position clear!
 set nocompatible
 
-filetype plugin indent on  " Load plugins according to detected filetype.
+filetype plugin on  " Load plugins according to detected filetype.
+" filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
 
 set autoindent             " Indent according to previous line.
@@ -69,6 +70,8 @@ set synmaxcol   =200       " Only highlight the first 200 columns.
 au FileType javascript setlocal tabstop=2 shiftwidth=2
 au FileType javascript.jsx setlocal tabstop=2 shiftwidth=2
 au FileType typescript setlocal tabstop=2 shiftwidth=2
+au FileType yaml setlocal tabstop=2 shiftwidth=2
+au FileType yml setlocal tabstop=2 shiftwidth=2
 au FileType html setlocal tabstop=2 shiftwidth=2
 au FileType xml setlocal tabstop=2 shiftwidth=2
 " Go specific ( might not be needed as go uses 4:4 format )
