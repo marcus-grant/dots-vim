@@ -18,6 +18,10 @@ endif
 " ==============================================================================
 call plug#begin('~/.vim/plugged')
 
+" Fzf is already installed using ansible, so reference it locally
+Plug '~/.local/share/fzf'
+Plug 'junegunn/fzf.vim'
+
 Plug 'junegunn/seoul256.vim'
 
 Plug 'NLKNguyen/papercolor-theme'
@@ -61,7 +65,7 @@ set lazyredraw             " Only redraw when necessary.
 set splitbelow             " Open new windows below the current window.
 set splitright             " Open new windows right of the current window.
 
-set cursorline             " Find the current line quickly.
+"set cursorline             " Find the current line quickly.
 set wrapscan               " Searches wrap around end-of-file.
 set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
@@ -98,6 +102,16 @@ let g:NERDCustomDelimiters = { 'javascript.jsx': { 'left': '//', 'leftAlt': '/*'
 " ==============================================================================
 
 let mapleader = ","
+
+" Disable highlights with leader + h
+nnoremap <leader>h :noh<cr>
+
+" fzf {{{
+"================================
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>g :Rg<cr>
+" }}}
+
 
 set list                   " Show non-printable characters.
 if has('multi_byte') && &encoding ==# 'utf-8'
