@@ -22,11 +22,13 @@ call plug#begin('~/.vim/plugged')
 Plug '~/.local/share/fzf'
 Plug 'junegunn/fzf.vim'
 
+Plug 'scrooloose/nerdcommenter'
+
+Plug 'christoomey/vim-tmux-navigator'
+
 Plug 'junegunn/seoul256.vim'
 
 Plug 'NLKNguyen/papercolor-theme'
-
-Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
