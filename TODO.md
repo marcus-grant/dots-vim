@@ -12,5 +12,5 @@ Planning
 Completed
 =========
 
-- [x] Add `README.md`
-- [x] Add `TODO.md`
+- [x] Add `README.md` `d9f769b`
+- [x] Add `TODO.md` `d9f769b`
