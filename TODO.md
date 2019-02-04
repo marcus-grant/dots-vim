@@ -2,6 +2,7 @@ TODOs
 =====
 
 - [ ] Fix strange 2 space shift behavior
+- [ ] Clipboard keymaps and commands for yank/paste of clipboard
 
 Planning
 ========
