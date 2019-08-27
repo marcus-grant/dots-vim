@@ -110,6 +110,8 @@ nnoremap <leader>h :noh<cr>
 
 " fzf {{{
 "================================
+" add to fzf to runtime path
+rtp+=/usr/bin/fzf
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>g :Rg<cr>
 " }}}
