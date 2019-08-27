@@ -13,5 +13,6 @@ Planning
 Completed
 =========
 
+- [x] Add junnegun/fzf vim file to this repo & use /usr/bin/fzf as exe
 - [x] Add `README.md` `d9f769b`
 - [x] Add `TODO.md` `d9f769b`

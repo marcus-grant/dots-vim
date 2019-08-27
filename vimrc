@@ -19,7 +19,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Fzf is already installed using ansible, so reference it locally
-Plug '~/.local/share/fzf'
+Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
 
 Plug 'scrooloose/nerdcommenter'
