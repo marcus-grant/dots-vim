@@ -1,3 +1,6 @@
 # Net write history is just a history for local net stuff not needed
 .netrwhist
 
+# ignore plugins managed by vim-plug
+plugged
+
