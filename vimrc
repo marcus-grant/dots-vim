@@ -110,6 +110,13 @@ nnoremap <leader>h :noh<cr>
 
 " fzf {{{
 "================================
+" include the vim fzf function helper if present
+if !empty(glob("/usr/share/vim/vimfiles/plugin/fzf.vim"))
+    source /usr/share/vim/vimfiles/plugin/fzf.vim
+elseif !empty(glob("/usr/share/doc/fzf/examples/fzf.vim"))
+    source /usr/share/doc/fzf/examples/fzf.vim
+endif
+
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>g :Rg<cr>
 " }}}
