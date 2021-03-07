@@ -19,7 +19,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Fzf is already installed using ansible, so reference it locally
-Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'scrooloose/nerdcommenter'
@@ -30,12 +30,13 @@ Plug 'junegunn/seoul256.vim'
 
 Plug 'NLKNguyen/papercolor-theme'
 
+Plug 'morhetz/gruvbox'
+
 call plug#end()
 
 
 " General
 " ==============================================================================
-
 " You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
 " We set it explicitely to make our position clear!
 set nocompatible
