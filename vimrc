@@ -3,7 +3,7 @@
 "
 
 " Init & Plug
-" ==============================================================================
+" ==============================
 
 " This goes in front of the plug#begin() func
 " It's there to preempt vim-plug for updates or inits
@@ -14,8 +14,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 
-" Plugins Sectionn('~/.vim/plugged')
-" ==============================================================================
+" Plugins Section('~/.vim/plugged')
+" ==============================
 call plug#begin('~/.vim/plugged')
 
 " Fzf is already installed using ansible, so reference it locally
@@ -36,7 +36,7 @@ call plug#end()
 
 
 " General
-" ==============================================================================
+" ==============================
 " You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
 " We set it explicitely to make our position clear!
 set nocompatible
@@ -73,7 +73,9 @@ set wrapscan               " Searches wrap around end-of-file.
 set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
 
-" Filetype general sets
+
+" Filetype Behaviors
+" ==============================
 au FileType javascript setlocal tabstop=2 shiftwidth=2
 au FileType javascript.jsx setlocal tabstop=2 shiftwidth=2
 au FileType typescript setlocal tabstop=2 shiftwidth=2
@@ -86,7 +88,7 @@ au FileType go set softtabstop=4
 
 
 " NERDCommenter
-" ----------------------------------------------------------
+" ==============================
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multiline comments
@@ -102,7 +104,7 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDCustomDelimiters = { 'javascript.jsx': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' } }
 
 " Keymaps
-" ==============================================================================
+" ==============================
 
 let mapleader = ","
 
@@ -110,7 +112,7 @@ let mapleader = ","
 nnoremap <leader>h :noh<cr>
 
 " fzf {{{
-"================================
+" ==============================
 " include the vim fzf function helper if present
 if !empty(glob("/usr/share/vim/vimfiles/plugin/fzf.vim"))
     source /usr/share/vim/vimfiles/plugin/fzf.vim
