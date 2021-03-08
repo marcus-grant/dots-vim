@@ -136,8 +136,16 @@ if &shell =~# 'fish$'
   set shell=/bin/bash
 endif
 
+" Appearance
+" =============================
 " Set colorscheme
 colorscheme PaperColor
+" Set ruler (row/col counter in statusbar)
+set ruler
+" Set transparency to terminal application
+highlight Normal guibg=NONE ctermbg=NONE
+highlight NonText ctermbg=NONE
+
 
 " Autoreload vimrc on changes
 " from: http://bit.ly/2CfyFTu
