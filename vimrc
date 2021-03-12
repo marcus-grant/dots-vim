@@ -26,6 +26,8 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'christoomey/vim-tmux-navigator'
 
+Plug 'jamessan/vim-gnupg', { 'branch': 'main' }
+
 Plug 'junegunn/seoul256.vim'
 
 Plug 'NLKNguyen/papercolor-theme'
