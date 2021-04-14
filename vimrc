@@ -60,7 +60,6 @@ set display     =lastline  " Show as much as possible of the last line.
 
 set showmode               " Show current mode in command-line.
 set showcmd                " Show already typed keys when more are expected.
-
 set incsearch              " Highlight while searching with / or ?.
 set hlsearch               " Keep matches highlighted.
 
@@ -104,6 +103,11 @@ let g:NERDTrimTrailingWhitespace = 1
 " From https://bit.ly/2kp8npv
 " Used to recognize & handle jsx comments
 let g:NERDCustomDelimiters = { 'javascript.jsx': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' } }
+" Ensure gopass leaves no traces
+" From https://bit.ly/3tl5qYO
+au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+" Same for macOS
+au BufNewFile,BufRead /private/**/gopass** setlocal noswapfile nobackup noundofile
 
 " Keymaps
 " ==============================
