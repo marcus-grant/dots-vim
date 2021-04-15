@@ -39,7 +39,6 @@ call plug#end()
 
 " General
 " ==============================
-" You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
 " You want Vim, not vi.
 " When Vim finds a vimrc, 'nocompatible' is set anyway.
 " We set it explicitely to make our position clear!
@@ -71,13 +70,13 @@ set lazyredraw              " Only redraw when necessary.
 set splitbelow              " Open new windows below the current window.
 set splitright              " Open new windows right of the current window.
 
-"set cursorline             " Find the current line quickly.
 set cursorline             " Find the current line quickly.
 set wrapscan                " Searches wrap around end-of-file.
 set report      =0          " Always report changed lines.
 set synmaxcol   =200        " Only highlight the first 200 columns.
 
-set smartcase               " Smartcase search (no case if no caps)
+set ignorecase              " Ignore case by default
+set smartcase               " Switch to case sensitivity if capitals entered
 
 
 " Filetype Behaviors
