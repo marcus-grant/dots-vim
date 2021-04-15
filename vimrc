@@ -148,15 +148,42 @@ if &shell =~# 'fish$'
   set shell=/bin/bash
 endif
 
+
 " Appearance
 " =============================
-" Set colorscheme
-colorscheme PaperColor
+" Dark/Light mode functions
+function! ColorLight()
+    " Sets color scheme/appearance settings for a light mode
+    " Put light mode color settings here
+    " Set colorscheme
+    colorscheme PaperColor
+    set background=light
+    " Set transparency to terminal application
+    highlight Normal guibg=NONE ctermbg=NONE
+    highlight NonText ctermbg=NONE
+endfunction
+function! ColorDark()
+    " Sets color scheme/appearance settings for a light mode
+    " Put light mode color settings here
+    " Set colorscheme
+    colorscheme gruvbox
+    set background=dark
+    " Set transparency to terminal application
+    highlight Normal guibg=NONE ctermbg=NONE
+    highlight NonText ctermbg=NONE
+endfunction
+
+" Determine color by time of day and call Color(Dark|Light)
+if strftime("%H") < 18 " Light till this hour
+    call ColorLight()
+elseif strftime("%H") < 6 " Midnight till this hour should be dark
+    call ColorDark()
+else " After time of day to change to dark till after midnight
+    call ColorDark()
+endif
+
 " Set ruler (row/col counter in statusbar)
 set ruler
-" Set transparency to terminal application
-highlight Normal guibg=NONE ctermbg=NONE
-highlight NonText ctermbg=NONE
 
 
 " Autoreload vimrc on changes
