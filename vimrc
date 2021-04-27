@@ -121,7 +121,7 @@ let mapleader = ","
 " Disable highlights with leader + h
 nnoremap <leader>h :noh<cr>
 
-" fzf {{{
+" fzf
 " ==============================
 " include the vim fzf function helper if present
 if !empty(glob("/usr/share/vim/vimfiles/plugin/fzf.vim"))
@@ -132,7 +132,8 @@ endif
 
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>g :Rg<cr>
-" }}}
+
+let $FZF_DEFAULT_COMMAND = 'fd . --hidden --exclude .git'
 
 
 set list                   " Show non-printable characters.
