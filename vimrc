@@ -153,10 +153,12 @@ endif
 " Appearance
 " =============================
 " Dark/Light mode functions
+let s:dark_mode = 0
 function! ColorLight()
     " Sets color scheme/appearance settings for a light mode
     " Put light mode color settings here
     " Set colorscheme
+    let s:dark_mode = 0
     colorscheme PaperColor
     set background=light
     " Set transparency to terminal application
@@ -167,12 +169,24 @@ function! ColorDark()
     " Sets color scheme/appearance settings for a light mode
     " Put light mode color settings here
     " Set colorscheme
+    let s:dark_mode = 1
     colorscheme gruvbox
     set background=dark
     " Set transparency to terminal application
     highlight Normal guibg=NONE ctermbg=NONE
     highlight NonText ctermbg=NONE
 endfunction
+function! ColorToggle()
+    " Toggle whether ColorDark() or ColorLight() is called
+    if s:dark_mode
+        call ColorLight()
+    else
+        call ColorDark()
+    endif
+endfunction
+" ColorToggle() with leader+d
+nnoremap <leader>d :call ColorToggle()<cr>
+
 
 " Determine color by time of day and call Color(Dark|Light)
 if strftime("%H") < 18 " Light till this hour
