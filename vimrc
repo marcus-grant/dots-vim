@@ -19,8 +19,21 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Fzf is already installed using ansible, so reference it locally
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Debian based installs will reference this strange directory
+""" Tested on Pop_OS & Debian
+if !empty(glob('/usr/share/doc/fzf/examples/fzf.vim'))
+    " TODO remove once it's confirmed working on both debian & ubuntu/pop
+    " echo('local fzf found at /usr/share/ddoc/fzf/examples/fzf.vim')
+    Plug '/usr/bin/fzf'
+    Plug 'junegunn/fzf.vim'
+    " TODO remove this after confirming it's not necessary here
+    " Remember, this gets referenced below in the FZF config section
+    " source /usr/share/doc/fzf/examples/fzf.vim
+" The fallback should just install the way junegunn recommends
+else
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+endif
 
 Plug 'scrooloose/nerdcommenter'
 
@@ -35,7 +48,6 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
 
 call plug#end()
-
 
 " General
 " ==============================
@@ -133,7 +145,8 @@ endif
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>g :Rg<cr>
 
-let $FZF_DEFAULT_COMMAND = 'fd . --hidden --exclude .git'
+" TODO remove if confirmed that this isnt needed on mac (zsh) & deb/ub/pop linux
+" let $FZF_DEFAULT_COMMAND = 'fd . --hidden --exclude .git'
 
 
 set list                   " Show non-printable characters.
