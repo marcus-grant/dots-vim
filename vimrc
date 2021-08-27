@@ -90,6 +90,25 @@ set synmaxcol   =200        " Only highlight the first 200 columns.
 set ignorecase              " Ignore case by default
 set smartcase               " Switch to case sensitivity if capitals entered
 
+" Cache files for backups/swap/undos need to get created outside working dir
+let s:VIMCACHEDIR = $HOME."/.cache/vim"
+if exists("*mkdir")
+    silent! call mkdir(s:VIMCACHEDIR, "p")
+    silent! call mkdir(s:VIMCACHEDIR."/bundle", "p")
+    silent! call mkdir(s:VIMCACHEDIR."/swap", "p")
+    silent! call mkdir(s:VIMCACHEDIR."/undo", "p")
+    silent! call mkdir(s:VIMCACHEDIR."/backup", "p")
+else
+    echo "Error: cannot create vim cache dirs for swap/undo/backup due to no present mkdir cmd"
+    echo "Defaulting to no cache options enabled"
+    set noswapfile
+    set nobackup
+endif
+
+set backupdir=~/.cache/vim/backup// " Custom backup dir to avoid noise in project dirs
+set directory=~/.cache/vim/swap// " Same but for swap files
+set undodir=~/.cache/vim/undo// " Same but for undo files
+
 
 " Filetype Behaviors
 " ==============================
