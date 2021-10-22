@@ -39,6 +39,10 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'christoomey/vim-tmux-navigator'
 
+" TODO marked for removal because no open issues have been addressed in a year
+" Right now markdown messes up folding that toggles during typing in insert
+" Plug 'plasticboy/vim-markdown'
+
 Plug 'jamessan/vim-gnupg', { 'branch': 'main' }
 
 Plug 'junegunn/seoul256.vim'
