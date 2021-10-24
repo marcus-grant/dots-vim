@@ -94,6 +94,8 @@ set synmaxcol   =200        " Only highlight the first 200 columns.
 set ignorecase              " Ignore case by default
 set smartcase               " Switch to case sensitivity if capitals entered
 
+set number                  " Turn on the line number column
+
 " Cache files for backups/swap/undos need to get created outside working dir
 let s:VIMCACHEDIR = $HOME."/.cache/vim"
 if exists("*mkdir")
@@ -222,6 +224,9 @@ function! ColorToggle()
 endfunction
 " ColorToggle() with leader+d
 nnoremap <leader>d :call ColorToggle()<cr>
+
+" Toggle linenumber
+nnoremap <leader># :set number!<cr>
 
 
 " Determine color by time of day and call Color(Dark|Light)
