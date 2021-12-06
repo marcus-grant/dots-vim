@@ -231,9 +231,11 @@ nnoremap <leader># :set number!<cr>
 
 " Determine color by time of day and call Color(Dark|Light)
 if strftime("%H") < 18 " Light till this hour
-    call ColorLight()
-elseif strftime("%H") < 6 " Midnight till this hour should be dark
-    call ColorDark()
+    if strftime("%H") < 6
+        call ColorDark()
+    else
+        call ColorLight()
+    endif
 else " After time of day to change to dark till after midnight
     call ColorDark()
 endif
